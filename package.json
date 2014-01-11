@@ -1,0 +1,26 @@
+{
+  "name": "nodeScorer",
+  "version": "0.0.0",
+  "description": "Simple card game scorer",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zzmp/nodeScorer.git"
+  },
+  "keywords": [
+    "card",
+    "score",
+    "scoring",
+    "spades",
+    "euchre"
+  ],
+  "author": "zzmp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zzmp/nodeScorer/issues"
+  },
+  "homepage": "https://github.com/zzmp/nodeScorer"
+}

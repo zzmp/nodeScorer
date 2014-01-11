@@ -30,6 +30,8 @@ http.ServerResponse.prototype.serve = function (path) {
   }
 }
 
+var port = process.env.PORT || 5000;
+
 var tokens = {TITLE: 'Scoreboard: v1.0',
               SCRIPT: '\"/scripts/script.js\"',
               GAME: 'Spades'};
@@ -39,6 +41,6 @@ http.createServer(function (request, response) {
   var path = url.parse(request.url).path;
   if (path == '/') path = '/html/';
   response.serve(path);
-}).listen(8124);
+}).listen(port);
 
-console.log('Server running at http://127.0.0.1:8124/');
+console.log('Server running at http://127.0.0.1:' + port + '/');
