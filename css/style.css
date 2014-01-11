@@ -4,12 +4,18 @@
 /* 0. Document Setup (structure)
 /*------------------------------------------------------------*/
 
+/*    RESET                                                   */
+body,div,dl,dt,dd,ul,ol.li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+	margin:0;
+	padding:0;
+}
+
 body {
 	font: "Garamond";
-	font-weight: 200;
-	color: #999999;
-	background: #888888;
-	background: linear-gradient(to bottom, #888888 0%,#777777 100%)
+	//font-weight: 200;
+	//color: #999999;
+	//background: #888888;
+	//background: linear-gradient(to bottom, #888888 0%,#777777 100%)
 }
 
 /*------------------------------------------------------------*/
@@ -17,24 +23,46 @@ body {
 /*------------------------------------------------------------*/
 
 #ribbon {
-	font-weight: 100;
-	color: #111111;
-	background: #222222;
-}
-
-#ribbon li{
-	float: right;
-	position: relative;
-}
-
-#ribbon ul{
 	list-style: none;
-	position:absolute;
-	display:none;
+	margin-bottom: 10px;
+	width: 100%;
 }
 
-#ribbon li:hover ul{
-	display:;
+#ribbon li {
+	float: left;
+	position: relative;
+	padding-left: 50px;
+}
+
+#ribbon ul {
+	white-space: nowrap;
+	list-style: none;
+	position: absolute;
+	display: none;
+}
+
+#ribbon ul li {
+	padding-top: 5px;
+	padding-left: 0px;
+}
+
+#ribbon le {
+	display: block;
+	background: #FF0000;
+	padding: 1px;
+	width: 100px;
+}
+
+#ribbon li:hover ul {
+	display: block;
+}
+
+#ribbon li ul:hover {
+	display: block;
+}
+
+#ribbon li:hover ul le {
+	background: #00FF00;
 }
 
 /*------------------------------------------------------------*/
