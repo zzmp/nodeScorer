@@ -1,0 +1,64 @@
+@import url(http://fonts.googleapis.com/css?family=Garamond);
+
+/*------------------------------------------------------------*/
+/* 0. Document Setup (structure)
+/*------------------------------------------------------------*/
+
+body {
+	font: "Garamond";
+	font-weight: 200;
+	color: #999999;
+	background: #888888;
+	background: linear-gradient(to bottom, #888888 0%,#777777 100%)
+}
+
+/*------------------------------------------------------------*/
+/* 1. Ribbon (header, footer)                                 */
+/*------------------------------------------------------------*/
+
+#ribbon {
+	font-weight: 100;
+	color: #111111;
+	background: #222222;
+}
+
+#ribbon li{
+	float: right;
+	position: relative;
+}
+
+#ribbon ul{
+	list-style: none;
+	position:absolute;
+	display:none;
+}
+
+#ribbon li:hover ul{
+	display:;
+}
+
+/*------------------------------------------------------------*/
+/* 2. Scoreboard                                              */
+/*------------------------------------------------------------*/
+
+div#board {
+	font-weight: 300;
+	color: #555555;
+}
+
+div#board header {
+	font-weight: 500
+	color: #666666;
+}
+
+div#board content {
+	font-weight: 600;
+	color: #777777;
+	background: #000000;
+}
+
+div#board content:hover {
+	color: #000000;
+	background: #777777;
+}
+
