@@ -9,10 +9,10 @@ var tokens = {TITLE: 'Scoreboard: v1.0',
 var fsEncoding = {encoding: 'utf8'};
 
 http.createServer(function (request, response) {
-console.log(require('util').inspect(url.parse(request.url)));
+//console.log(require('util').inspect(url.parse(request.url)));
   var path = url.parse(request.url).path;
-  if (path.indexOf('/js')!=-1) {
-    response.writeHead(200, {'Content-Type': 'text/js'});
+  if (path.indexOf('/scripts')!=-1) {
+    response.writeHead(200, {'Content-Type': 'text/javascript'});
     response.end(fs.readFileSync('.' + path,fsEncoding));
 } else if (path.indexOf('/css')!=-1) {
     response.writeHead(200, {'Content-Type': 'text/css'});
