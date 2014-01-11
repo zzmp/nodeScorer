@@ -1,5 +1,5 @@
-module.exports = function(str, tokens) {
-  return str.replace(
+module.exports = function(tokens) {
+  return this.replace(
     /\{\{([^{}]*)\}\}/g,
     function (match) {
       token = match.slice(2,-2);
