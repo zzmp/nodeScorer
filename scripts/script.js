@@ -1,27 +1,77 @@
-init = function init() {
-  document.getElementById('comment').innerHTML = 'Shoot the moon!'; // it's ironic
-  document.getElementById('homeTeam').innerHTML = 'Home';
-  document.getElementById('awayTeam').innerHTML = 'Away';
-  document.getElementById('homeScore').innerHTML = '0';
-  document.getElementById('awayScore').innerHTML = '0';
-  document.getElementById('homeBid').innerHTML = '-';
-  document.getElementById('awayBid').innerHTML = '-';
-  document.getElementById('instructions').style.visibility = 'hidden';
-  document.getElementById('bids').style.visibility = 'hidden';
-  document.getElementById('tricks').style.visibility = 'hidden';
+function onclick(id, fun) {
+  var elem = document.getElementById(id);
+  elem.onclick = fun;
 }
 
-function showInstructions() {	
-  document.getElementById('instructions').style.visibility = 'visible';
+function ondblclick(id, fun) {
+  var elem = document.getElementById(id);
+  elem.ondblclick = fun;
 }
 
-function hideInstructions() {
-  document.getElementById('instructions').style.visibility = 'hidden';
+function onsubmit(id, fun) {
+  var elem = document.getElementById(id);
+  elem.onsubmit = fun;
+}
+
+function show(id) {
+  var elem = document.getElementById(id);
+  elem.style.visibility = 'visible';
+}
+
+function hide(id) {
+  var elem = document.getElementById(id);
+  elem.style.visibility = 'hidden';
+}
+
+function set(id, val) {
+  var elem = document.getElementById(id);
+  elem.innerHTML = val;
+}
+
+function value(id, val) {
+  var elem = document.getElementById(id);
+  elem.value = val;
+}
+
+function check(id) {
+  document.getElementById(id).checked = true;
+}
+
+function setBids() {
+
+}
+
+function setScore() {
+
+}
+
+function clearBids() {
+  value('homeBidLeft','');
+  value('homeBidRight','');
+  value('awayBidLeft','');
+  value('awayBidRight','');
+}
+
+function clearScore() {
+  value('homeTricks','');
+  value('awayTricks','');
+  check('homeNil');
+  check('awayNil');
 }
 
 function resetScore() {
-  document.getElementById('homeScore').innerHTML = '0';
-  document.getElementById('awayScore').innerHTML = '0';
-  document.getElementById('homeBid').innerHTML = '-';
-  document.getElementById('awayBid').innerHTML = '-';
+  set('homeScore','0');
+  set('awayScore','0');
+  set('homeBid','-');
+  set('awayBid','-');
+}
+
+function init() {
+  set('comment','Shoot the moon!'); // it's ironic
+  set('homeTeam','Home');
+  set('awayTeam','Away');
+  hide('instructions');
+  hide('bids');
+  hide('tricks');
+  resetScore();
 }

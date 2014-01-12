@@ -2,22 +2,33 @@
 
 <script>
 	init();
-	document.getElementById('showInstr').onclick = function() {showInstructions()};
-	document.getElementById('hideInstr').onclick = function() {hideInstructions()};
-	document.getElementById('homeTeam').ondblclick = function() {changeHomeTeam()};
-	document.getElementById('awayTeam').ondblclick = function() {changeAwayTeam()};
-	document.getElementById('homeScore').onclick = function() {changeHomeScore()};
-	document.getElementById('awayScore').onclick = function() {changeAwayScore()};
-	document.getElementById('submitBids').onclick = function() {
-		document.getElementById('submit').style.visibility = 'hidden';
-		document.getElementById('bids').style.visibility = 'visible';
-};
-
-
-
-
-
-
+	onclick('showInstr', function() {show('instructions')});
+	onclick('hideInstr', function() {hide('instructions')});
+	ondblclick('homeTeam', function() {changeHomeTeam()});
+	ondblclick('awayTeam', function() {changeAwayTeam()});
+	ondblclick('homeScore', function() {changeHomeScore()});
+	ondblclick('awayScore', function() {changeAwayScore()});
+	onclick('enterBids', function() {
+		show('bids');
+		hide('submit');
+	});
+	onclick('enterTricks', function() {
+		show('tricks');
+		hide('submit');
+	});
+	onsubmit('submitBids', function() {
+		setBids();
+		show('submit');
+		hide('bids');
+		clearBids();
+		return false;
+	});
+	onsubmit('submitTricks', function() {
+		setScore();
+		show('submit');
+		hide('tricks');
+		clearBids();
+		return false;
+	});
 </script>
-
 </html>

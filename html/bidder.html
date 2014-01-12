@@ -2,13 +2,13 @@
 
 	<div id="submit">
 	<ul>
-		<li><li id="submitBids">Place bids</li></li>
-		<li><li id="submitTricks">Count tricks</li></li>
+		<li><li id="enterBids">Place bids</li></li>
+		<li><li id="enterTricks">Count tricks</li></li>
 	</ul>
 	</div>
 
 	<div id="bids">
-	<form>
+	<form id="submitBids">
 		<div class="left">
 			<input id="homeBidLeft" class="left" type="number" required="true" />
 			<input id="homeBidRight" class="right" type="number" required="true" />
@@ -23,7 +23,7 @@
 	</div>
 
 	<div id="tricks">
-	<form>
+	<form id="submitTricks">
 		<div class="left">
 			<input id="homeTricks" class="left" type="number" required="true" />
 			<span id="homeWentNil" class="right">

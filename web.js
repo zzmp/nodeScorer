@@ -14,6 +14,11 @@ String.prototype.supplant = require('./scripts/tokenizer');
 http.ServerResponse.prototype.serve = function (path) {
   path = '.' + path;
   if (path.slice(-1) != '/') {
+    if (path.slice(-1) == '?') {
+      this.writeHead(200);
+      this.end();
+      return;
+    }
     var ext = path.slice(path.lastIndexOf('.'));
     if (ext == '.ico') {
       this.writeHead(200, {'Content-Type': 'image/ico'});
