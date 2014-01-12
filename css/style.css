@@ -163,7 +163,7 @@ html,body {
 
 .submit {
 	position: absolute;
-	top: 75%;
+	top: 65%;
 	left: 25%;
 	list-style: none;
 	width: 50%;
@@ -171,11 +171,11 @@ html,body {
 }
 
 .submit li {
-	padding-top: 10px;
+	padding-top: 15px;
 }
 
 .submit le {
+	padding: 5px;
 	display: block;
 	background: #DDCCCC;
 }
-
