@@ -2,6 +2,22 @@
 
 <script>
 	init();
+	document.getElementById('showInstr').onclick = function() {showInstructions()};
+	document.getElementById('hideInstr').onclick = function() {hideInstructions()};
+	document.getElementById('homeTeam').ondblclick = function() {changeHomeTeam()};
+	document.getElementById('awayTeam').ondblclick = function() {changeAwayTeam()};
+	document.getElementById('homeScore').onclick = function() {changeHomeScore()};
+	document.getElementById('awayScore').onclick = function() {changeAwayScore()};
+	document.getElementById('submitBids').onclick = function() {
+		document.getElementById('submit').style.visibility = 'hidden';
+		document.getElementById('bids').style.visibility = 'visible';
+};
+
+
+
+
+
+
 </script>
 
 </html>
