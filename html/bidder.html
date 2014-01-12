@@ -1,0 +1,44 @@
+<div id="bidder">
+
+	<div id="submit">
+	<ul>
+		<li><li id="submitBids">Place bids</li></li>
+		<li><li id="submitTricks">Count tricks</li></li>
+	</ul>
+	</div>
+
+	<div id="bids">
+	<form>
+		<div class="left">
+			<input id="homeBidLeft" class="left" type="number" required="true" />
+			<input id="homeBidRight" class="right" type="number" required="true" />
+		</div>
+		<div class="right">
+			<input id="awayBidLeft" class="left" type="number" required="true" />
+			<input id="awayBidRight" class="right" type="number" required="true" />
+		</div>
+		<div class="spacer" />
+		<input class="submit" type="submit" value="Place bids" />
+	</form>
+	</div>
+
+	<div id="tricks">
+	<form>
+		<div class="left">
+			<input id="homeTricks" class="left" type="number" required="true" />
+			<span id="homeWentNil" class="right">
+				Succesful nil?<input id="homeNil" type="checkbox" checked="true" />
+			</span>
+		</div>
+		<div class="right">
+			<input id="awayTricks" class="left" type="number" required="true" />
+			<span id="awayWentNil" class="right">
+				Succesful nil?<input id="awayNil" type="checkbox" checked="true" />
+			</span>
+		</div>
+		<div class="spacer" />
+		<input class="submit" type="submit" value="Count tricks" />
+	</form>
+	</div>
+
+</div>

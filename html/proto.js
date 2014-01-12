@@ -1,1 +1,7 @@
-module.exports = ['start', 'head', 'ribbon', 'board', 'end'];
+module.exports = [
+  'header',
+  'ribbon',
+  'instruction',
+  'board',
+  'bidder',
+  'ender'];
