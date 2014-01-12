@@ -56,6 +56,7 @@ html,body {
 	background: #FFCCCC;
 	padding: 1px;
 	width: 100px;
+	text-align: center;
 }
 
 .ribbon le:hover {
@@ -79,9 +80,38 @@ html,body {
 /* 2. Scoreboard                                              */
 /*------------------------------------------------------------*/
 
+/*------------------------------------------------------------*/
+/*    Font                                                    */
+#comment {
+	font-weight: bold;
+	font-style: italic;
+	font-size: 110%;
+}
+
+.team {
+	font-size: 125%;
+}
+
+.score {
+	font-size: 300%;
+}
+
+.bid {
+	font-size: 50%;
+}
+
+.submit le:hover {
+	font-weight: bold;
+}
+/*------------------------------------------------------------*/
+
 #board,#comment,.team,.score,.submit {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#comment,.team,.score,.bid,.submit {
+	text-align: center;
 }
 
 #board {
@@ -120,13 +150,13 @@ html,body {
 .score {
 	width: 40%;
 	height: 80%;
-	background: #333333;
+	background: #BBBB99;
 }
 
 .score #awayScore,#homeScore {
 	width: 65%;
 	height: 100%;
-	background: #000FFF;
+	background: #BBBB99;
 }
 
 .bid {
