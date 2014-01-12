@@ -13,13 +13,20 @@ String.prototype.supplant = require('./scripts/tokenizer');
 //serve page elements by folder
 http.ServerResponse.prototype.serve = function (path) {
   path = '.' + path;
-  if (path.slice(-1) != '/')
-    if (path.slice(path.lastIndexOf('.')) == '.ico') {
+  if (path.slice(-1) != '/') {
+    var ext = path.slice(path.lastIndexOf('.'));
+    if (ext == '.ico') {
       this.writeHead(200, {'Content-Type': 'image/ico'});
       this.end(fs.readFileSync(path), 'binary');
-    } else //send everything but icon as text
+    } else if (ext == '.css') {
+      this.writeHead(200, {'Content-Type': 'text/css'});
       this.end(fs.read(path).supplant(tokens));
-  else {
+    } else if (ext == '.js') {
+      this.writeHead(200, {'Content-Type': 'text/javascript'});
+      this.end(fs.read(path).supplant(tokens));
+    } else // send everything else as text
+      this.end(fs.read(path).supplant(tokens));
+  } else {
     this.writeHead(200, {'Content-Type': 'text/xml'});
     var proto = require(path + 'proto.js');
     for (var div in proto) {
