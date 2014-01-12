@@ -13,6 +13,9 @@
 		hide('submit');
 	});
 	onclick('enterTricks', function() {
+		if (!bids.set) {
+			alert('No bidding was done');
+			return;}
 		show('tricks');
 		hide('submit');
 	});
@@ -27,7 +30,7 @@
 		setScore();
 		show('submit');
 		hide('tricks');
-		clearBids();
+		clearScore();
 		return false;
 	});
 </script>
