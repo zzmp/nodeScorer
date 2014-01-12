@@ -14,7 +14,7 @@ body {
 	font: "Garamond";
 	//font-weight: 200;
 	//color: #999999;
-	//background: #888888;
+	//background: #000000;
 	//background: linear-gradient(to bottom, #888888 0%,#777777 100%)
 }
 
@@ -23,8 +23,9 @@ body {
 /*------------------------------------------------------------*/
 
 #ribbon {
+	color: #440000;
 	list-style: none;
-	margin-bottom: 10px;
+	padding: 5px;
 	width: 100%;
 }
 
@@ -48,9 +49,13 @@ body {
 
 #ribbon le {
 	display: block;
-	background: #FF0000;
+	background: #FFCCCC;
 	padding: 1px;
 	width: 100px;
+}
+
+#ribbon le:hover {
+	font-weight: bold;
 }
 
 #ribbon li:hover ul {
@@ -62,7 +67,7 @@ body {
 }
 
 #ribbon li:hover ul le {
-	background: #00FF00;
+	background: #DDCCCC;
 }
 
 /*------------------------------------------------------------*/
