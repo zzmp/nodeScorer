@@ -45,8 +45,6 @@ function setBids() {
   var aL = Number(document.getElementById('awayBidLeft').value);
   var aR = Number(document.getElementById('awayBidRight').value);
 
-  console.log(hL,hR,aL,aR);
-
   if ((hL + hR) > 13 || (aL + aR) > 13) {
     alert('Team bids cannot exceed 13, please rebid');
     return;
@@ -72,10 +70,26 @@ function setBids() {
   set('awayBid', bids.aNil ? bids.a + 'N' : bids.a);
 }
 
-var score = {h: 0, a: 0, hBags: 0, aBags: 0};
+var score = {h: 0, a: 0};
 
 function setScore() {
-  function bagged(score, bags) {}
+  function calcScore(score, gain, bags) {
+    var curBags = Math.abs(score % 10) + bags;
+    score -= score % 10;
+    score += gain * 10;
+
+    if (curBags >= 10) {
+      score -= 100;
+      curBags -= 10;
+    }
+
+    if (score < 0)
+      score -= curBags;
+    else
+      score += curBags;
+
+    return score;
+  }
 
   var h = Number(document.getElementById('homeTricks').value);
   var hNil = document.getElementById('homeNil').checked;
@@ -83,7 +97,7 @@ function setScore() {
   var aNil = document.getElementById('awayNil').checked;
 
   if (a+h !== 13) {
-    alert('There should be 13 tricks, pleease recount');
+    alert('There should be 13 tricks, please recount');
     return;
   }
 
@@ -91,29 +105,27 @@ function setScore() {
   a = a - bids.a;
 
   if (h < 0)
-    score.h -= bids.h * 10;
+    score.h = calcScore(score.h, -bids.h, 0);
   else {
-    score.h += bids.h * 10;
-    bagged(score.h, h);
+    score.h = calcScore(score.h, bids.h, h);
   }
   if (a < 0)
-    score.a -= bids.a * 10;
+    score.a = calcScore(score.a, -bids.a, 0);
   else {
-    score.a += bids.a * 10;
-    bagged(score.a, a)
+    score.a = calcScore(score.a, bids.a, a);
   }
 
   if (bids.hNil) {
     if (hNil)
-      score.h += 100;
+      score.h = calcScore(score.h, 10, 0);
     else
-      score.h -= 100;
+      score.h = calcScore(score.h, -10, 0);
   }
   if (bids.aNil) {
     if  (aNil)
-      score.a += 100;
+      score.a = calcScore(score.a, 10, 0);
     else
-      score.a -= 100;
+      score.a = calcScore(score.a, -10, 0);
   }
 
   set('homeScore', score.h);
@@ -144,6 +156,30 @@ function resetScore() {
   set('awayScore','0');
   set('homeBid','-');
   set('awayBid','-');
+}
+
+function changeHomeTeam() {
+  set('homeTeam',prompt('Enter a new team name','Home'));
+}
+
+function changeAwayTeam() {
+  set('awayTeam',prompt('Enter a new team name','Away'));
+}
+
+function changeHomeScore() {
+  var iScore = Number(prompt('Set new score',score.h));
+  if (!isNaN(iScore)) {
+    score.h = iScore;
+    set('homeScore', score.h);
+  }
+}
+
+function changeAwayScore() {
+  var iScore = Number(prompt('Set new score',score.a));
+  if (!isNaN(iScore)) {
+    score.a = iScore;
+    set('awayScore', score.a);
+  }
 }
 
 function init() {
